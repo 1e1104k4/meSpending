@@ -7,16 +7,33 @@
 
 import SwiftUI
 
+struct ExpenseItem {
+    let name: String
+    let type: String
+    let amount: Double
+}
+
+@Observable
+class Expenses {
+    var items = [ExpenseItem]()
+}
+
 struct ContentView: View {
+    
+    @State private var expenses = Expenses()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            List {
+                ForEach(expenses.items, id: \.name) { item in
+                    Text(item.name)
+                }
+            }
+            .navigationTitle("meSpending")
         }
-        .padding()
     }
+    
+    
 }
 
 #Preview {
