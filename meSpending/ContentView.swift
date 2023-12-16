@@ -30,6 +30,12 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("meSpending")
+            .toolbar {
+                Button("Add Expense", systemImage: "plus") {
+                    let expense = ExpenseItem(name: "test", type: "personal", amount: 10)
+                    expenses.items.append(expense)
+                }
+            }
         }
     }
     
