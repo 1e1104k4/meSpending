@@ -23,6 +23,8 @@ struct ContentView: View {
     
     @State private var expenses = Expenses()
     
+    @State private var showingAddExpense = false
+    
     var body: some View {
         NavigationStack {
             List {
@@ -37,6 +39,9 @@ struct ContentView: View {
                     let expense = ExpenseItem(name: "test", type: "personal", amount: 10)
                     expenses.items.append(expense)
                 }
+            }
+            .sheet(isPresented: $showingAddExpense) {
+                AddView()
             }
         }
     }
