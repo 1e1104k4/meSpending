@@ -41,7 +41,7 @@ struct ContentView: View {
                 }
             }
             .sheet(isPresented: $showingAddExpense) {
-                AddView()
+                AddView(expenses: expenses)
             }
         }
     }
