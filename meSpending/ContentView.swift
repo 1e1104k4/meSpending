@@ -40,6 +40,8 @@ struct ContentView: View {
     
     @State private var showingAddExpense = false
     
+    let localCurrency = Locale.current.currency?.identifier ?? "USD"
+    
     var body: some View {
         NavigationStack {
             List {
@@ -51,7 +53,7 @@ struct ContentView: View {
                             Text(item.type)
                         }
                         Spacer()
-                        Text(item.amount, format: .currency(code: Locale.current.currency?.identifier ?? "USD" ))
+                        Text(item.amount, format: .currency(code: localCurrency))
                     }
                 }
                 .onDelete(perform: removeItems)

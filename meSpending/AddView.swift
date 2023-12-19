@@ -17,6 +17,7 @@ struct AddView: View {
     var expenses: Expenses
     
     let types = ["Business", "Personal"]
+    let localCurrency = Locale.current.currency?.identifier ?? "USD"
     
     var body: some View {
         NavigationStack {
@@ -27,7 +28,7 @@ struct AddView: View {
                         Text($0)
                     }
                 }
-                TextField("Amount", value: $amount, format: .currency(code: "USD"))
+                TextField("Amount", value: $amount, format: .currency(code: localCurrency))
                     .keyboardType(.decimalPad)
             }
             .navigationTitle("Add new expense")
