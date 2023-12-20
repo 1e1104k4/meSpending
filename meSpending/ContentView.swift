@@ -25,7 +25,7 @@ class Expenses {
     }
     
     var personalItems: [ExpenseItem] {
-        items.filter { $0.type == "Presonal" }
+        items.filter { $0.type == "Personal" }
     }
     
     var businessItems: [ExpenseItem] {
