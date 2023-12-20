@@ -49,8 +49,6 @@ struct ContentView: View {
     
     @State private var showingAddExpense = false
     
-    let localCurrency = Locale.current.currency?.identifier ?? "USD"
-    
     var body: some View {
         NavigationStack {
             List {
