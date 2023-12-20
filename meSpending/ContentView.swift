@@ -23,6 +23,15 @@ class Expenses {
             }
         }
     }
+    
+    var personalItems: [ExpenseItem] {
+        items.filter { $0.type == "Presonal" }
+    }
+    
+    var businessItems: [ExpenseItem] {
+        items.filter { $0.type == "Business" }
+    }
+    
     init() {
         if let savedItems = UserDefaults.standard.data(forKey: "Items") {
             if let decodedItems = try? JSONDecoder().decode([ExpenseItem].self, from: savedItems) {
