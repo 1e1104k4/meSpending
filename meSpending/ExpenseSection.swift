@@ -15,20 +15,21 @@ struct ExpenseSection: View {
     let localCurrency = Locale.current.currency?.identifier ?? "USD"
     
     var body: some View {
-        ForEach(expenses) { item in
-            HStack {
-                VStack(alignment: .leading) {
-                    Text(item.name)
-                        .font(.headline)
-                    Text(item.type)
+        Section(title) {
+            ForEach(expenses) { item in
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text(item.name)
+                            .font(.headline)
+                        Text(item.type)
+                    }
+                    Spacer()
+                    Text(item.amount, format: .currency(code: localCurrency))
+                        .style(for: item)
                 }
-                Spacer()
-                Text(item.amount, format: .currency(code: localCurrency))
-                    .style(for: item)
             }
+            .onDelete(perform: deleteItems)
         }
-        .onDelete(perform: deleteItems)
-
     }
 }
 
