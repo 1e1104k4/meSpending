@@ -54,19 +54,7 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             List {
-                ForEach(expenses.items) { item in
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text(item.name)
-                                .font(.headline)
-                            Text(item.type)
-                        }
-                        Spacer()
-                        Text(item.amount, format: .currency(code: localCurrency))
-                            .style(for: item)
-                    }
-                }
-                .onDelete(perform: removeItems)
+                
             }
             .navigationTitle("meSpending")
             .toolbar {
