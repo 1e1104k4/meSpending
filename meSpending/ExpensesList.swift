@@ -1,21 +1,20 @@
 //
-//  ExpenseSection.swift
+//  ExpensesList.swift
 //  meSpending
 //
 //  Created by Leila on 12/20/23.
 //
 
+import SwiftData
 import SwiftUI
 
-struct ExpenseSection: View {
-    let title: String
-    let expenses: [ExpenseItem]
-    let deleteItems: (IndexSet) -> Void
+struct ExpensesList: View {
+    @Query private var expenses: [ExpenseItem]
     
     let localCurrency = Locale.current.currency?.identifier ?? "USD"
     
     var body: some View {
-        Section(title) {
+        List {
             ForEach(expenses) { item in
                 HStack {
                     VStack(alignment: .leading) {
@@ -34,7 +33,6 @@ struct ExpenseSection: View {
 }
 
 #Preview {
-    ExpenseSection(title: "Personal", expenses: []) { _ in
-        
-    }
+    ExpensesList()
+        .modelContainer(for: ExpenseItem.self)
 }

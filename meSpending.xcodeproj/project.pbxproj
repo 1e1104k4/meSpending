@@ -13,7 +13,7 @@
 		2E01CDDE2B2DFFC30041A485 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E01CDDD2B2DFFC30041A485 /* Preview Assets.xcassets */; };
 		2E01CDE52B2E76070041A485 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E01CDE42B2E76070041A485 /* AddView.swift */; };
 		2E01CDE92B3295640041A485 /* View-ExpenseStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E01CDE82B3295640041A485 /* View-ExpenseStyle.swift */; };
-		2E4109A42B337EC500AFB827 /* ExpenseSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4109A32B337EC500AFB827 /* ExpenseSection.swift */; };
+		2E4109A42B337EC500AFB827 /* ExpensesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4109A32B337EC500AFB827 /* ExpensesList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,7 +24,7 @@
 		2E01CDDD2B2DFFC30041A485 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2E01CDE42B2E76070041A485 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		2E01CDE82B3295640041A485 /* View-ExpenseStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View-ExpenseStyle.swift"; sourceTree = "<group>"; };
-		2E4109A32B337EC500AFB827 /* ExpenseSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseSection.swift; sourceTree = "<group>"; };
+		2E4109A32B337EC500AFB827 /* ExpensesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +59,7 @@
 			children = (
 				2E01CDD62B2DFFC20041A485 /* meSpendingApp.swift */,
 				2E01CDD82B2DFFC20041A485 /* ContentView.swift */,
-				2E4109A32B337EC500AFB827 /* ExpenseSection.swift */,
+				2E4109A32B337EC500AFB827 /* ExpensesList.swift */,
 				2E01CDE82B3295640041A485 /* View-ExpenseStyle.swift */,
 				2E01CDE42B2E76070041A485 /* AddView.swift */,
 				2E01CDDA2B2DFFC30041A485 /* Assets.xcassets */,
@@ -147,7 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E01CDD92B2DFFC20041A485 /* ContentView.swift in Sources */,
-				2E4109A42B337EC500AFB827 /* ExpenseSection.swift in Sources */,
+				2E4109A42B337EC500AFB827 /* ExpensesList.swift in Sources */,
 				2E01CDD72B2DFFC20041A485 /* meSpendingApp.swift in Sources */,
 				2E01CDE52B2E76070041A485 /* AddView.swift in Sources */,
 				2E01CDE92B3295640041A485 /* View-ExpenseStyle.swift in Sources */,

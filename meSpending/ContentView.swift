@@ -30,8 +30,8 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             List {
-                ExpenseSection(title: "Business", expenses: expenses.businessItems, deleteItems: removeBusinessItems)
-                ExpenseSection(title: "Personal", expenses: expenses.personalItems, deleteItems: removePersonalItems)
+                ExpensesList(title: "Business", expenses: expenses.businessItems, deleteItems: removeBusinessItems)
+                ExpensesList(title: "Personal", expenses: expenses.personalItems, deleteItems: removePersonalItems)
             }
             .navigationTitle("meSpending")
             .toolbar {
