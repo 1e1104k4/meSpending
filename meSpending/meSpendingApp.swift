@@ -13,5 +13,6 @@ struct meSpendingApp: App {
         WindowGroup {
             ContentView()
         }
+        .modelContainer(for: ExpenseItem.self)
     }
 }
