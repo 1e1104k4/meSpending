@@ -30,11 +30,24 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack {
-            ExpensesList()
+            ExpensesList(sortOrder: sortOrder)
                 .navigationTitle("meSpending")
                 .toolbar {
                     Button("Add Expense", systemImage: "plus") {
                         showingAddExpense = true
+                    }
+                    Menu("Sort", systemImage: "arrow.up.arrow.down") {
+                        Picker("Sort By", selection: $sortOrder) {
+                            Text("$...$$$")
+                                .tag([
+                                    SortDescriptor(\ExpenseItem.amount)
+                                ])
+                            
+                            Text("$$$...$")
+                                .tag([
+                                    SortDescriptor(\ExpenseItem.amount, order: .reverse)
+                                ])
+                        }
                     }
                 }
                 .sheet(isPresented: $showingAddExpense) {
