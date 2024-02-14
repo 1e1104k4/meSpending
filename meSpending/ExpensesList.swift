@@ -9,6 +9,7 @@ import SwiftData
 import SwiftUI
 
 struct ExpensesList: View {
+    @Environment(\.modelContext) var modelContext
     @Query private var expenses: [ExpenseItem]
     
     let localCurrency = Locale.current.currency?.identifier ?? "USD"
@@ -27,7 +28,14 @@ struct ExpensesList: View {
                         .style(for: item)
                 }
             }
-            .onDelete(perform: deleteItems)
+            .onDelete(perform: removeItems)
+        }
+    }
+    
+    func removeItems(at offsets: IndexSet) {
+        for offset in offsets {
+            let item = expenses[offset]
+            modelContext.delete(item)
         }
     }
 }
