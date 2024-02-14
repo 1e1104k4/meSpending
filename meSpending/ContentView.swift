@@ -24,6 +24,10 @@ class ExpenseItem {
 struct ContentView: View {
     @State private var showingAddExpense = false
     
+    @State private var sortOrder = [
+        SortDescriptor(\ExpenseItem.amount),
+    ]
+    
     var body: some View {
         NavigationStack {
             ExpensesList()
