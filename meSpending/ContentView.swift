@@ -22,26 +22,20 @@ class ExpenseItem {
 }
 
 struct ContentView: View {
-    
-    @State private var expenses = Expenses()
-    
     @State private var showingAddExpense = false
     
     var body: some View {
         NavigationStack {
-            List {
-                ExpensesList(title: "Business", expenses: expenses.businessItems, deleteItems: removeBusinessItems)
-                ExpensesList(title: "Personal", expenses: expenses.personalItems, deleteItems: removePersonalItems)
-            }
-            .navigationTitle("meSpending")
-            .toolbar {
-                Button("Add Expense", systemImage: "plus") {
-                    showingAddExpense = true
+            ExpensesList()
+                .navigationTitle("meSpending")
+                .toolbar {
+                    Button("Add Expense", systemImage: "plus") {
+                        showingAddExpense = true
+                    }
                 }
-            }
-            .sheet(isPresented: $showingAddExpense) {
-                AddView(expenses: expenses)
-            }
+                .sheet(isPresented: $showingAddExpense) {
+                    AddView()
+                }
         }
     }
 }
